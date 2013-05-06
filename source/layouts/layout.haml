@@ -1,0 +1,13 @@
+!!!
+%html
+  %head
+    %meta{charset: 'utf-8'}
+    %meta{content: 'IE=edge,chrome=1', 'http-equive' => 'X-UA-Compatible'}
+    %title= data.page.title || "Ruby Intro -- by Julien 'Lta' BALLET"
+
+    = stylesheet_link_tag 'all'
+
+  %body{class: page_classes}
+    = yield
+
+= javascript_include_tag 'all'

@@ -1,0 +1,145 @@
+.flowtime
+  .ft-section
+    .ft-page
+      %h1 Ruby.init
+      %h2 Ruby in 29 minutes
+      %h3 for developpers (or anything somewhat related)
+
+      %p
+        %strong Julien 'Lta' BALLET
+        :escaped
+          <julien.ballet.pro@gmail.com>
+      %p @find_lta - github.com/elthariel
+
+
+    .ft-page
+      %h1 Dependencies
+      %h2 What you'll need to enjoy this
+
+      %ul
+        %li.ft-fragment.step A few programming notions
+        %li.ft-fragment.step A vague idea about what objects are
+        %li.ft-fragment.step
+          A computer with a
+          %strong keyboard
+        %li
+          .ft-fragment.step
+            A few software packages
+          %ul
+            %li.ft-fragment.step
+              %strong GNU/Linux users:
+              build-essential (or equivalent) package
+            %li.ft-fragment.step
+              %strong Mac Users:
+              recent XCode version
+            %li.ft-fragment.step
+              %strong Windows Users:
+              a Linux system (recommended) or a Mac
+        %li.ft-fragment.step
+          An everlasting admiration for anything related to ponies !
+        %li.ft-fragment.step
+          The willingness to listen for about an hour
+
+
+    .ft-page
+      %h1 Plan
+
+      %ul
+        %li.ft-fragment.step A few classical examples
+        %li.ft-fragment.step A small ./install_party
+        %li.ft-fragment.step General concerns about Ruby
+        %li.ft-fragment.step Variables, Constants
+        %li.ft-fragment.step String, Array, Hash
+        %li.ft-fragment.step Control structures, Iterators
+        %li.ft-fragment.step (Objects / Modules)
+        %li.ft-fragment.step (Doc / Standard Library)
+        %li.ft-fragment.step RubyGems
+        %li.ft-fragment.step ? RestClient / Sinatra ?
+      %h3.ft-fragment.step Let's go for some classic examples...
+
+  .ft-section
+    .ft-page
+      %h1 Hello World !
+      %pre
+        %code.ruby
+          :preserve
+            $> irb
+            >> puts "Hello World!"
+            Hello World!
+            >>
+      %p
+        We can't avoid it, could we ?
+
+    .ft-page
+      %h1 99 bottles !
+      %pre
+        %code.ruby
+          :preserve
+            >> 100.times { |count| puts "\#{99 - count} beer bottle(s) @ Paris.rb meetup" }
+      %pre.ft-fragment.step
+        %code.ruby
+          99 beer bottle(s) @ Paris.rb meetup
+      %pre.ft-fragment.step
+        %code.ruby
+          98 beer bottle(s) @ Paris.rb meetup
+      %pre.ft-fragment.step
+        %code.ruby
+          97 beer bottle(s) @ Paris.rb meetup
+      %pre.ft-fragment.step
+        %code.ruby
+          (...)
+      %pre.ft-fragment.step
+        %code.ruby
+          0 beer bottle(s) @ Paris.rb meetup
+
+      %pre.ft-fragment.step
+        %code.ruby
+          (...)
+
+      %h3.ft-fragment.step
+        Alcoholics !
+
+
+
+  .ft-section
+    .ft-page
+      %h1 Setup your ruby environment
+      %h2 Using sweet rbenv
+      .ft-fragment
+        %h3 Hum... what is this ... tool ?
+
+      %p.ft-fragment
+        rbenv installs and manages ruby versions.
+
+      %p.ft-fragment
+        This is cool. Believe me !
+
+
+    .ft-page
+      %h1 CheckList 1/1
+      .ft-fragment
+        %h3 Do you have a terminal ?
+      .ft-fragment
+        %h3 Do you have a compiler ?
+
+      .ft-fragment
+        %pre
+          %code.bash
+            :preserve
+              $> gcc -v
+              [...]
+              gcc version 4.7.2
+
+      .ft-fragment
+        %h3 Do you have git ?
+      .ft-fragment
+        %pre
+          %code.bash
+            :preserve
+              $> git --version
+              [...]
+              git version 1.7.10.4
+
+    .ft-page
+      %h1 An editor
+      Anything would do the job
