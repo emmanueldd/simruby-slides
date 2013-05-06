@@ -48,14 +48,20 @@
         %li.ft-fragment.step A few classical examples
         %li.ft-fragment.step A small ./install_party
         %li.ft-fragment.step General concerns about Ruby
-        %li.ft-fragment.step Variables, Constants
-        %li.ft-fragment.step String, Array, Hash
-        %li.ft-fragment.step Control structures, Iterators
+        %li.ft-fragment.step Variables, Constants, Standard types
+        %li.ft-fragment.step Methods, Control structures, Iterators
         %li.ft-fragment.step (Objects / Modules)
         %li.ft-fragment.step (Doc / Standard Library)
         %li.ft-fragment.step RubyGems
         %li.ft-fragment.step ? RestClient / Sinatra ?
       %h3.ft-fragment.step Let's go for some classic examples...
+
+
+
+
+
+
+  - ######################################################################
 
   .ft-section
     .ft-page
@@ -101,6 +107,11 @@
 
 
 
+
+
+  - ######################################################################
+
+
   .ft-section
     .ft-page
       %h1 Setup your ruby environment
@@ -116,30 +127,571 @@
 
 
     .ft-page
-      %h1 CheckList 1/1
-      .ft-fragment
-        %h3 Do you have a terminal ?
-      .ft-fragment
-        %h3 Do you have a compiler ?
+      %h1 CheckList
+      %h3.ft-fragment
+        Do you have a terminal ?
+      %h3.ft-fragment
+        Do you have a compiler ?
 
-      .ft-fragment
-        %pre
-          %code.bash
-            :preserve
-              $> gcc -v
-              [...]
-              gcc version 4.7.2
 
-      .ft-fragment
-        %h3 Do you have git ?
-      .ft-fragment
-        %pre
-          %code.bash
-            :preserve
-              $> git --version
-              [...]
-              git version 1.7.10.4
+      %pre.ft-fragment
+        %code.bash
+          :preserve
+            $> gcc -v
+            [...]
+            gcc version 4.7.2
+
+      %h3.ft-fragment
+        Do you have git ?
+      %pre.ft-fragment
+        %code.bash
+          :preserve
+            $> git --version
+            [...]
+            git version 1.7.10.4
+
+    .ft-page
+      %h1 RbEnv install
+
+      %pre.ft-fragment
+        %code.bash
+          :preserve
+            $ git clone git://github.com/sstephenson/rbenv.git ~/.rbenv
+            [...]
+
+      %pre.ft-fragment
+        %code.bash
+          :preserve
+            $ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
+            # Ubuntu: use ~/.profile
+
+      %pre.ft-fragment
+        %code.bash
+          :preserve
+            $ echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+            $ exec $SHELL -l
+            # Ubuntu: use ~/.profile
+
+      %pre.ft-fragment
+        %code.bash
+          :preserve
+            $ git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+            [...]
+
+      %pre.ft-fragment
+        %code.bash
+          :preserve
+            $ rbenv install 2.0.0-p0
+
+      %p.ft-fragment
+        Now, let's praise the Gods of Wifi and wait
+
 
     .ft-page
       %h1 An editor
-      Anything would do the job
+      %h2 You'll NEED one (and a good one).
+      %ul
+        %li.ft-fragment Emacs
+        %li.ft-fragment ViM
+        %li.ft-fragment TextMate
+        %li.ft-fragment SublimeText
+        %li.ft-fragment Adds yours here !
+
+
+  - ######################################################################
+
+  .ft-section
+    .ft-page
+      %h1 Ruby, a programmer's best friend.
+
+      .ft-fragment
+        %h3 Interpreted
+        %p A program runs your programs
+      .ft-fragment
+        %h3 Dynamic with introspection
+        %p Program can alter themselves
+      .ft-fragment
+        %h3 Functional traits
+      .ft-fragment
+        %h3 Everything is an object
+        %p.ft-fragment Object ?
+
+    .ft-page
+      %h1 Object
+
+      %ul
+        %li.ft-fragment
+          Data with methods (i.e. actions)
+        %li.ft-fragment
+          e.g: A Knob
+          %ul
+            %li.ft-fragment
+              Data: Position
+            %li.ft-fragment
+              Action: Turning the knob
+      .ft-fragment
+        %h3 Examples
+        %pre
+          %code.ruby
+            knob.turn
+
+      %pre.ft-fragment
+        %code.ruby
+          knob.turn_to(0.5)
+
+      %pre.ft-fragment
+        %code.ruby
+          :preserve
+            >> "Everything is an object".reverse
+            => "tcejbo na si gnihtyrevE"
+
+    .ft-page
+      %h1 Functionnal traits
+
+      %p.ft-fragment Methods are also data
+      %pre.ft-fragment
+        %code.ruby
+          :preserve
+            def my_method(another_method)
+              another_method.call
+            end
+
+      %p.ft-fragment Methods computes and return values
+      %pre.ft-fragment
+        %code.ruby
+          :preserve
+            >> "Methods returns values".reverse.upcase
+            => "SEULAV SNRUTER SDOHTEM"
+
+
+      %h2.ft-fragment Stop technical details !
+
+
+
+
+
+
+  - ######################################################################
+
+  .ft-section
+    .ft-page
+      %h1 Variables, constants
+
+      %ul
+        %li.ft-fragment A variable is a name to represent a piece of data.
+        %li.ft-fragment You store data you work with in variables.
+        %li.ft-fragment
+          In Ruby, a variable name
+          %ul
+            %li.ft-fragment starts with a lower case letter
+            %li.ft-fragment contains letters, numbers and _
+        %li.ft-fragment A constant is a variable that cannot change value
+        %li.ft-fragment
+          In Ruby, a constant name
+          %ul
+            %li.ft-fragment starts with an uppercase case letter
+            %li.ft-fragment contains letters, numbers and _
+            %li.ft-fragment _should_ contain only uppercase letter
+
+
+    .ft-page
+      %h1 Variables, constants : Examples
+
+      %pre.ft-fragment
+        %code.ruby
+          :preserve
+            >> a = 1
+            => 1
+            >> a + 1
+            => 2
+            >> a = 23
+            => 23
+
+      %pre.ft-fragment
+        %code.ruby
+          variable_name = "a few words"
+      %pre.ft-fragment
+        %code.ruby
+          float = 0.42
+      %pre.ft-fragment
+        %code.ruby
+          an_array = [3, 1, 4, 1, 5, 9, 2]
+      %pre.ft-fragment
+        %code.ruby
+          a_hash = { key: "value", "3" => "three" }
+      %pre.ft-fragment
+        %code.ruby
+          :preserve
+            CONSTANT = "MyAppName"
+            CONSTANT_NUMBER = 42
+
+    .ft-page
+      %h1 String
+      %p An ordered sequence of characters
+
+      .ft-fragment
+        %pre
+          %code.ruby
+            :preserve
+              >> s = "A string"
+              => "A string"
+              >> s.length
+              => 8
+      .ft-fragment
+        %pre
+          %code.ruby
+            :preserve
+              >> s + " and another one"
+              => "A string and another one"
+              >> s.index('i')
+              => 5
+
+      .ft-fragment
+        %p Google: 'ruby string'
+
+
+
+
+    .ft-page
+      %h1 Array
+      %p An ordered sequence of values
+
+
+      %pre.ft-fragment
+        %code.ruby
+          :preserve
+            >> a = [0, 1, 2, 3, 4, "grape", 1.23, [1, 2]]
+            => [0, 1, 2, 3, 4, "grape", 1.23, [1, 2]]
+
+      %pre.ft-fragment
+        %code.ruby
+          :preserve
+            >> a[2]
+            => 2
+
+      %pre.ft-fragment
+        %code.ruby
+          :preserve
+            >> a[2] = "poney"
+            >> a
+            => [0, 1, "poney", 3, 4, "grape", 1.23, [1, 2]]
+
+      %pre.ft-fragment
+        %code.ruby
+          :preserve
+            >> a.reverse
+            => [[1, 2], 1.23, "grape", 4, 3, "poney", 1, 0]
+
+      .ft-fragment
+        %p Google: 'ruby array'
+
+
+    .ft-page
+      %h1 Hash
+      %p A set of associations between values and other values
+
+      %pre.ft-fragment
+        %code.ruby
+          :preserve
+            h = { 42 => "win", "win" => "play again", "ki" => [1, 2] }
+            => {42=>"win", "win"=>"play again", "ki"=>[1, 2]}
+
+      %pre.ft-fragment
+        %code.ruby
+          :preserve
+            >> h["win"]
+            => "play again"
+            >> h[42]
+            => "win"
+
+      %pre.ft-fragment
+        %code.ruby
+          :preserve
+            >> h[42] = 84
+            >> h.keys
+            => [42, "win", "ki"]
+
+      .ft-fragment
+        %p Google: 'ruby hash'
+
+
+
+
+
+  - ######################################################################
+
+  .ft-section
+    .ft-page
+      %h1 Methods
+      %ul
+        %li.ft-fragment A list of instructions
+        %li.ft-fragment tuned via parameters
+        %li.ft-fragment performing (an) action(s)
+        %li.ft-fragment computing and returning a value
+        %li.ft-fragment or both.
+        %li.ft-fragment A method name starts with a letter
+        %li.ft-fragment and contains letter, numbers, _, ! or ?
+
+      %pre.ft-fragment
+        %code.ruby
+          :preserve
+            def increment_and_print(a)
+              a = a + 1
+              puts a
+            end
+
+      %pre.ft-fragment
+        %code.ruby
+          :preserve
+            >> increment_and_print(4)
+            5
+            => nil
+
+    .ft-page
+      %pre.ft-fragment
+        %code.ruby
+          :preserve
+            def add_two_numbers(x, y)
+              return x + y
+            end
+
+      %pre.ft-fragment
+        %code.ruby
+          :preserve
+            >> add_two_numbers(1, 1)
+            => 2
+            >> add_two_numbers(1, 1) * 2
+            => 4
+
+      %pre.ft-fragment
+        %code.ruby
+          :preserve
+            # This method is identical to the first one
+            def add_two_numbers(x, y)
+              x + y
+            end
+
+      %pre.ft-fragment
+        %code.ruby
+          :preserve
+            >> add_two_numbers(1, 1)
+            => 2
+            >> add_two_numbers(1, 1) * 2
+            => 4
+
+    .ft-page
+      %h1 The truth, the lies and the void between
+      %p.ft-fragment
+        Everything is true except false and nil
+      %p.ft-fragment Boolean operators
+
+      %pre.ft-fragment
+        %code.ruby
+          :preserve
+            true and false # => false
+            true and true  # => true
+            true and nil   # => false
+            0 && ""       # => true
+
+      %pre.ft-fragment
+        %code.ruby
+          :preserve
+            true or false # => true
+            false || true # => true
+
+      %pre.ft-fragment
+        %code.ruby
+          :preserve
+            not true  # => false
+            not false # => true
+            !false    # => true
+
+    .ft-page
+      %h1 if, else, elsif
+
+      %pre.ft-fragment
+        %code.ruby
+          :preserve
+            def test_equality(a, b)
+              if a == b
+                puts "these are equals"
+              elsif a > b
+                puts "a is bigger"
+              else
+                puts "b is bigger"
+              end
+            end
+
+      %pre.ft-fragment
+        %code.ruby
+          :preserve
+            >> test_equality(1, 1)
+            "these are equals"
+            => nil
+
+      %pre.ft-fragment
+        %code.ruby
+          :preserve
+            >> test_equality(1, 42)
+            "b is bigger"
+            => nil
+
+      %pre.ft-fragment
+        %code.ruby
+          :preserve
+            unless a == b do_something() # equivalent to if not (a == b) do_something()
+
+    .ft-page
+      %h1 Range and iterations
+      %pre.ft-fragment
+        %code.ruby
+          :preserve
+            >> 10.times { puts "Hello World!" }
+            [...]
+
+      %pre.ft-fragment
+        %code.ruby
+          :preserve
+            >> (0..9).each { puts "Hello World!" } # Same as above
+
+      %pre.ft-fragment
+        %code.ruby
+          :preserve
+            >> (21..42).times { |counter| puts counter }
+
+      %pre.ft-fragment
+        %code.ruby
+          :preserve
+            >> [1, 2, 7, "plop"].each { |value| puts value }
+            1
+            2
+            7
+            plop
+            => nil
+
+      %p.ft-fragment Virtually every 'container' in Ruby has a :each method
+
+    .ft-page
+      %h1 Exercise !
+
+      %p.ft-fragment
+
+        Write a method that takes an array of number as a parameter and
+        prints every number that is >= 42
+
+      %p.ft-fragment
+
+        Upgrade the previous method, so you can give the thresold
+        number as a second parameter
+
+      %p.ft-fragment
+        Write a method that takes an array of number as a parameter and
+        returns the biggest number in the array
+
+
+
+
+
+
+
+  - ######################################################################
+
+  .ft-section
+    .ft-page
+      %h1 Objects
+      %ul
+        %li.ft-fragment Data + Methods
+        %li.ft-fragment Objects are created from classes.
+        %li.ft-fragment A class is a blueprint, a recipe for creating objectS.
+        %li.ft-fragment Class names start with an uppercase letter
+        %li.ft-fragment and are usually CamelCase
+
+      %pre.ft-fragment
+        %code.ruby
+          :preserve
+            class EmptyClass
+            end
+
+      %pre.ft-fragment
+        %code.ruby
+          :preserve
+            class Procrastinate
+              def do(what)
+                puts "Yeah, I'll \#{what} tomorrow !"
+              end
+            end
+
+    .ft-page
+      %h1 Objects (bis)
+
+      %pre.ft-fragment
+        %code.ruby
+          :preserve
+            >> o0 = Procrastinate.new # Here we create an object from the recipe.
+            => #< Procrastinate:0x00000000e494e0>
+            >> o0.do("some work")
+            Yeah, I'll do some work tomorrow !
+            => nil
+
+      %pre.ft-fragment
+        %code.ruby
+          :preserve
+            class MyValue  # Now with data
+              def set_val(x)
+                @value = x
+              end
+              def get_val
+                x
+              end
+            end
+
+      %pre.ft-fragment
+        %code.ruby
+          :preserve
+            >> v = MyValue.new
+            >> v.set_val(42)
+            >> v.get_val
+            => 42
+
+    .ft-page
+      %h1 Objects (ter)
+      %pre.ft-fragment
+        %code.ruby
+          :preserve
+            class MyBetterValue < MyValue
+              def initialize(x)
+                @value = x
+              end
+              def increment
+                @val = @val + 1
+              end
+            end
+
+      %pre.ft-fragment
+        %code.ruby
+          :preserve
+            >> v = MyBetterValue.new(42)
+            >> v.get_val
+            => 42
+            >> v.increment
+            >> v.get_val
+            ==> 43
+
+        %p
+
+
+
+
+
+
+  - ######################################################################
+
+  .ft-section
+    .ft-page
+      %h1 RubyGems
+
+    .ft-page
+      %h1 RestClient
+
+    .ft-page
+      %h1 Sinatra
