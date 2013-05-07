@@ -24,5 +24,7 @@ These slides have been written using the following tools :
 
 ## Contributions
 
+The Sass code is *awfull*, any help/improvement is much appreciated.
+
 All contributions are welcome, using the regular Pull Request flow.
 

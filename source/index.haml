@@ -3,13 +3,14 @@
     .ft-page
       %h1 Ruby.init
       %h2 Ruby in 29 minutes
-      %h3 for developpers (or anything somewhat related)
+      %h3 for beginning developpers (or anything somewhat related)
 
+      %img{src: '/images/parisrb-logo.png'}
       %p
-        %strong Julien 'Lta' BALLET
+        %strong Julien 'Lta' BALLET -
         :escaped
-          <julien.ballet.pro@gmail.com>
-      %p @find_lta - github.com/elthariel
+          <contact@lta.io> -
+        @find_lta - github.com/elthariel
 
 
     .ft-page
@@ -17,8 +18,8 @@
       %h2 What you'll need to enjoy this
 
       %ul
-        %li.ft-fragment.step A few programming notions
-        %li.ft-fragment.step A vague idea about what objects are
+        %li.ft-fragment.step Ease with computers
+        %li.ft-fragment.step Maybe some previous programming experience
         %li.ft-fragment.step
           A computer with a
           %strong keyboard
@@ -38,7 +39,7 @@
         %li.ft-fragment.step
           An everlasting admiration for anything related to ponies !
         %li.ft-fragment.step
-          The willingness to listen for about an hour
+          The willingness to listen for at least an hour
 
 
     .ft-page
@@ -72,6 +73,7 @@
             $> irb
             >> puts "Hello World!"
             Hello World!
+            => nil
             >>
       %p
         We can't avoid it, could we ?
@@ -467,16 +469,16 @@
         %code.ruby
           :preserve
             # This method is identical to the first one
-            def add_two_numbers(x, y)
+            def add_two_numbers2(x, y)
               x + y
             end
 
       %pre.ft-fragment
         %code.ruby
           :preserve
-            >> add_two_numbers(1, 1)
+            >> add_two_numbers2(1, 1)
             => 2
-            >> add_two_numbers(1, 1) * 2
+            >> add_two_numbers2(1, 1) * 2
             => 4
 
     .ft-page
@@ -602,7 +604,7 @@
       %ul
         %li.ft-fragment Data + Methods
         %li.ft-fragment Objects are created from classes.
-        %li.ft-fragment A class is a blueprint, a recipe for creating objectS.
+        %li.ft-fragment A class is a blueprint, a recipe for creating objects.
         %li.ft-fragment Class names start with an uppercase letter
         %li.ft-fragment and are usually CamelCase
 
@@ -627,9 +629,9 @@
       %pre.ft-fragment
         %code.ruby
           :preserve
-            >> o0 = Procrastinate.new # Here we create an object from the recipe.
+            >> oO = Procrastinate.new # Here we create an object from the recipe.
             => #< Procrastinate:0x00000000e494e0>
-            >> o0.do("some work")
+            >> oO.do("some work")
             Yeah, I'll do some work tomorrow !
             => nil
 
