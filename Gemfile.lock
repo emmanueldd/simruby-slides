@@ -1,8 +1,3 @@
-PATH
-  remote: /home/lta/code/ruby/flowtime-rails
-  specs:
-    flowtime-rails (0.0.2)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -21,6 +16,7 @@ GEM
     execjs (1.4.0)
       multi_json (~> 1.0)
     ffi (1.4.0)
+    flowtime-rails (0.0.2)
     fssm (0.2.10)
     haml (4.0.2)
       tilt
@@ -106,6 +102,6 @@ PLATFORMS
 
 DEPENDENCIES
   compass
-  flowtime-rails!
+  flowtime-rails
   middleman (~> 3.0.13)
   rb-inotify (~> 0.9)
