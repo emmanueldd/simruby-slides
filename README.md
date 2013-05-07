@@ -6,9 +6,12 @@ The content is _very_ basic. They *might* get improved over time.
 
 ## How to run
 
-    bundle install
+    $> bundle install
+    [...]
     middleman
-    firefox http://localhost:4567/
+    [...]
+
+Then visit http://localhost:4567/ with your browser
 
 ## Technical details
 
