@@ -8,7 +8,7 @@ The content is _very_ basic. They *might* get improved over time.
 
     $> bundle install
     [...]
-    middleman
+    $> middleman
     [...]
 
 Then visit http://localhost:4567/ with your browser
