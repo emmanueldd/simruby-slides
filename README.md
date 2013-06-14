@@ -1,8 +1,7 @@
-## Introduction to Ruby for beginners
+# SImRuby
+### Semaine immersive Ruby pour les étudiants de 2e année de Sup'internet.
 
-These are the slide for the first occurence of Paris.rb brand new initiation room for ruby beginners.
-
-The content is _very_ basic. They *might* get improved over time.
+Ce repository contient les slides de SImRuby.
 
 ## How to run
 

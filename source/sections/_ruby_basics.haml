@@ -1,0 +1,56 @@
+.ft-section
+  .ft-page
+    %h1 Ruby features
+
+    %ul
+      %li.ft-fragment
+        Le langage
+        %ul
+          %li.ft-fragment Tout est objet.
+          %li.ft-fragment.shy Je veux dire ... VRAIMENT TOUT !
+          %li.ft-fragment Traits fonctionnels
+          %li.ft-fragment.shy Introspection / Reflection
+          %li.ft-fragment MetaProgramming
+      %li.ft-fragment
+        La communaute
+        %ul
+          %li.ft-fragment MINSWAN: Matz Is Nice So We Are Nice
+          %li.ft-fragment OpenSource: des tas de gemmes.
+          %li.ft-fragment.shy Je veux dire BEAUCOUP, pour TOUT.
+          %li.ft-fragment DRY : Don't Repeat Yourself.
+          %li.ft-fragment.shy NEVER
+
+  .ft-page
+    %h1 Les bases
+
+    %pre
+      %code.ruby.ft-fragment
+        a = "test"           # Useless comment
+    %pre
+      %code.ruby.ft-fragment
+        b = 4                # 4.2 for Float
+    %pre
+      %code.ruby.ft-fragment
+        c = true             # or 'false'
+    %pre
+      %code.ruby.ft-fragment
+        d = nil              # = no value, also false
+    %pre
+      %code.ruby.ft-fragment
+        e = [1, 2, 3, 4, 5]  # an array
+    %pre
+      %code.ruby.ft-fragment
+        :preserve
+          # A Hash, associative array, dictionnary, etc.
+          f = {'akey' => 'and a value', 23 => "could be a key as well"}
+    %pre
+      %code.ruby.ft-fragment
+        CONSTANT = 'starts with an uppercase letter'
+
+  .ft-page
+    %pre
+      %code.ruby
+        :preserve
+          def method_name(param)
+            do_somethig_with_param param
+          end

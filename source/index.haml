@@ -1,111 +1,12 @@
 .flowtime
-  .ft-section
-    .ft-page
-      %h1 Ruby.init
-      %h2 Ruby in 29 minutes
-      %h3 for beginning developpers (or anything somewhat related)
 
-      %img{src: '/images/parisrb-logo.png'}
-      %p
-        %strong Julien 'Lta' BALLET -
-        :escaped
-          <contact@lta.io> -
-        @find_lta - github.com/elthariel
+  = partial 'sections/intro'
+  = partial 'sections/ruby_basics'
+  = #partial 'sections/ruby_types'
+  = #partial 'sections/ruby_objects_modules'
+  = #partial 'sections/ruby_metaprog'
 
 
-    .ft-page
-      %h1 Dependencies
-      %h2 What you'll need to enjoy this
-
-      %ul
-        %li.ft-fragment.step Ease with computers
-        %li.ft-fragment.step Maybe some previous programming experience
-        %li.ft-fragment.step
-          A computer with a
-          %strong keyboard
-        %li
-          .ft-fragment.step
-            A few software packages
-          %ul
-            %li.ft-fragment.step
-              %strong GNU/Linux users:
-              build-essential (or equivalent) package
-            %li.ft-fragment.step
-              %strong Mac Users:
-              recent XCode version
-            %li.ft-fragment.step
-              %strong Windows Users:
-              a Linux system (recommended) or a Mac
-        %li.ft-fragment.step
-          An everlasting admiration for anything related to ponies !
-        %li.ft-fragment.step
-          The willingness to listen for at least an hour
-
-
-    .ft-page
-      %h1 Plan
-
-      %ul
-        %li.ft-fragment.step A few classical examples
-        %li.ft-fragment.step A small ./install_party
-        %li.ft-fragment.step General concerns about Ruby
-        %li.ft-fragment.step Variables, Constants, Standard types
-        %li.ft-fragment.step Methods, Control structures, Iterators
-        %li.ft-fragment.step (Objects / Modules)
-        %li.ft-fragment.step (Doc / Standard Library)
-        %li.ft-fragment.step RubyGems
-        %li.ft-fragment.step ? RestClient / Sinatra ?
-      %h3.ft-fragment.step Let's go for some classic examples...
-
-
-
-
-
-
-  - ######################################################################
-
-  .ft-section
-    .ft-page
-      %h1 Hello World !
-      %pre
-        %code.ruby
-          :preserve
-            $> irb
-            >> puts "Hello World!"
-            Hello World!
-            => nil
-            >>
-      %p
-        We can't avoid it, could we ?
-
-    .ft-page
-      %h1 99 bottles !
-      %pre
-        %code.ruby
-          :preserve
-            >> 100.times { |count| puts "\#{99 - count} beer bottle(s) @ Paris.rb meetup" }
-      %pre.ft-fragment.step
-        %code.ruby
-          99 beer bottle(s) @ Paris.rb meetup
-      %pre.ft-fragment.step
-        %code.ruby
-          98 beer bottle(s) @ Paris.rb meetup
-      %pre.ft-fragment.step
-        %code.ruby
-          97 beer bottle(s) @ Paris.rb meetup
-      %pre.ft-fragment.step
-        %code.ruby
-          (...)
-      %pre.ft-fragment.step
-        %code.ruby
-          0 beer bottle(s) @ Paris.rb meetup
-
-      %pre.ft-fragment.step
-        %code.ruby
-          (...)
-
-      %h3.ft-fragment.step
-        Alcoholics !
 
 
 

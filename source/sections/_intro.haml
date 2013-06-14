@@ -1,0 +1,130 @@
+.ft-section
+  .ft-page
+    %h1
+      %img{src: '/images/lion-tech.png', style: "width: 95px"}
+      SImRuby
+    %h2 Getting a grasp of Ruby/Rails in 5 days
+    %h3 ~ That we'll be a crazy ride
+
+    .stack-center
+
+      %pre.stacked-center
+        %code.ruby
+          :preserve
+            {
+              author:  "Julien 'Lta' BALLET",
+              email:   "contact@lta.io",
+              twitter: "@find_lta",
+              github:  "http://github.com/elthariel"
+            }
+
+  .ft-page
+    %h1 TDD et evaluations
+    %h2 Spirit of the week
+
+    %ul
+      %li.ft-fragment
+        Test Driven Development
+        %ul
+          %li.ft-fragment Important en Agile/Ruby
+          %li.ft-fragment On ecrit les tests
+          %li.ft-fragment puis on les fait 'passer'
+      %li.ft-fragment
+        SImRuby
+        %ul
+          %li.ft-fragment Pas d'exercices
+          %li.ft-fragment -> Des tests
+      %li.ft-fragment
+        rspec
+        %ul
+          %li.ft-fragment Ruby Test Framework/DSL
+          %li.ft-fragment Unit Testing made fun
+          %li.ft-fragment.step (or less painfull at least)
+
+  .ft-page
+    %h1 RSpec overview
+    %h2 FIXME Reorder that
+
+    %p.ft-fragment
+      On veut tester une classe 'Foobar'
+
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          describe Foobar do
+            it 'should be tall' do
+              foobar = Foobar.new
+              expect(foobar.height).to be >= 190
+            end
+            it 'does not like questions' do
+              foobar = Foobar.new
+              expect(foobar.ask('something')).to match(/No/)
+            end
+          end
+
+
+  .ft-page
+    %h1 Le contenu dans les grandes lignes
+    %h2 aka. 'Le plan'
+
+    %ul
+      %li.ft-fragment
+        Day 1 :
+        %ul
+          %li.ft-fragment.shy Roulement de tambour ...
+          %li.ft-fragment Ruby !
+          %li.ft-fragment.shy Suprise ! Je parie que vous ne vous y attendiez pas !
+      %li.ft-fragment Day 2 : Rails philosophy, basics and ORM !
+      %li.ft-fragment Day 3 : Controllers, Views and assets !
+      %li.ft-fragment Day 4 : Building a JSON API
+      %li.ft-fragment Day 5 : Advanced stuff
+
+    %h3.ft-fragment.step Let's do the usual examples
+
+  .ft-page
+    %h1 Hello World !
+    %pre
+      %code.ruby
+        :preserve
+          $> irb
+          >> puts "Hello World!"
+          Hello World!
+          => nil
+          >>
+    %p
+      Inevitable exemple ...
+
+
+  .ft-page
+    %h1 99 bottles !
+    %pre
+      %code.ruby
+        :preserve
+          >> 100.times { |count| puts "\#{99 - count} bouteille(s) de San Pellegrino" }
+    %pre.ft-fragment.step
+      %code.ruby
+        99 bouteille(s) de San Pellegrino
+    %pre.ft-fragment.step
+      %code.ruby
+        98 bouteille(s) de San Pellegrino
+    %pre.ft-fragment.step
+      %code.ruby
+        97 bouteille(s) de San Pellegrino
+    %pre.ft-fragment.step
+      %code.ruby
+        96 bouteille(s) de San Pellegrino
+    %pre.ft-fragment.step
+      %code.ruby
+        (...)
+    %pre.ft-fragment.step
+      %code.ruby
+        0 bouteille(s) de San Pellegrino
+
+    %pre.ft-fragment.step
+      %code.ruby
+        (...)
+
+    %h3.ft-fragment.step
+      Pause pipi !
+
+
