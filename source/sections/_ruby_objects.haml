@@ -1,0 +1,173 @@
+.ft-section
+  .ft-page
+    %h1 Les objets et les modules
+
+    %ul
+      %li Syntaxe
+      %li Methodes
+      %li Donnees membres
+      %li Constructeur
+      %li Accesseurs
+      %li Heritage
+      %li Classe et objet
+
+  .ft-page
+    %h1 Syntaxe et methode
+    %h2 Creation d'une classe et d'un objet
+
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          class MyClass             # CamelCase, starts with an uppercase letter
+            def my_method
+              do_something()
+              do_something_else
+            end
+          end
+
+          my_object = MyClass.new
+          my_object.my_method
+
+  .ft-page
+    %h1 Constructeurs et donnees membres
+
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          class Test
+            def initialize(initial_value)
+              @value = initial_value
+            end
+
+            def value
+              @value               # Same as 'return value'
+            end
+
+            def value=(new_value)  # Isn't that cool ?
+              @value = new_value
+            end
+          end
+
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          t = Test.new(21)
+          >> t.value
+          -> 21
+          t.value = 42
+          >> t.value
+          -> 42
+
+  .ft-page
+    %h1 Accesseurs
+    %h2 On reecrit la meme classe
+
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          class Test
+            def initialize(initial_value)
+              @value = initial_value
+            end
+
+            attr_reader :value
+            attr_writer :value
+          end
+
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          class Test
+            def initialize(initial_value)
+              @value = initial_value
+            end
+
+            attr_accessor :value
+          end
+
+  .ft-page
+    %h1 Heritage
+    %h2 Copier-coller automagique
+
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          class NewTest < Test          # NewTest is inheriting from Test
+            attr_accessor :smth
+
+            def initialize(value, better_value)
+              @smth = better_value
+              super value               # Calls the parent constructor
+            end
+          end
+
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          ntest = NewTest.new(1, 2)
+          ntest.value = 3
+
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          >> ntest.is_a?(NewTest)
+          -> true
+          >> ntest.is_a?(Test)
+          -> true
+
+  .ft-page
+    %h1 Protecting
+
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          class Protecting
+            def public_method
+              protected_method
+              private_method
+            end
+
+            protected
+            def protected_method
+            end
+
+            private
+            def private_method
+            end
+          end
+
+  .ft-page
+    %pre
+      %code.ruby
+        :preserve
+          p = Protecting.new
+          >> p.public_method
+          -> Cool
+          >> p.protected_method
+          -> Error
+          >> p.private_method
+          -> Error
+
+  .ft-page
+    %h1 Les classes sont des objets
+    %pre
+      %code.ruby
+        :preserve
+          >> Test.name   # Calling method :name on a Class
+          -> 'Test'
+
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          class Pwet
+            def self.me
+              @@called ||= 0
+              @@called += 1
+              puts "Pwetting you ! (\#{@@called})"
+            end
+          end
+
+          >> Pwet.me
+          Pwetting you ! 1
+          -> nil
+

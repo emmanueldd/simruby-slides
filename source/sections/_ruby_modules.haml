@@ -1,0 +1,61 @@
+.ft-section
+  .ft-page
+    %h1 Les modules
+    %ul
+      %li.ft-fragment Un sac de methodes
+      %li.ft-fragment Pas de donnees membres
+      %li.ft-fragment Peut etre importe/inclus dans une classe
+      %li.ft-fragment On appelle ca un 'mixin'
+
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          module MyModule
+            def test
+              do_something
+            end
+          end
+
+          >> MyModule.new
+          -> Error
+          >> MyModule.test
+          -> Test
+
+  .ft-page
+    %h1 Les modules
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          class MyClass
+            include MyTest
+          end
+
+          o = MyClass.new
+          >> o.test
+          -> Cool
+
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          module OtherModule
+            def self.test2
+            end
+          end
+
+          >> OtherModule.test2
+          -> Cool
+
+  .ft-page
+    %h1 Kernel
+    %h2 One module to rule them all
+
+    %ul
+      %li
+        Kernel est le Module inclus dans partout
+        %ul
+          %li Objects
+          %li Modules
+      %li PS: Object est l'objet dont tous les objets heritent
+
+    %h3 Google: 'ruby + kernel'
+    %h3 Google: 'ruby + object'

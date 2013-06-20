@@ -1,0 +1,26 @@
+.ft-section
+  .ft-page
+    %h1 Meta-programmation
+    %h2 Des pistes a explorer/googler
+
+    %ul
+      %li
+        C'est quoi ?
+        %ul
+          %li Le programme s'examine
+          %li Le programme se modifie
+          %li Wikipedia: Programmes qui manipule des données décrivant elles-mêmes des programmes.
+
+  .ft-page
+    %h1 Meta-programmation
+    %h2 Les features
+
+    %ul
+      %li.ft-fragment object.is_a? | object.class
+      %li.ft-fragment object.respond_to?
+      %li.ft-fragment object.send(:method_name, arg1, arg2, ...)
+      %li.ft-fragment object.methods
+      %li.ft-fragment def method_missing(sym, arg1, arg2)
+      %li.ft-fragment eval "ruby.code"
+      %li.ft-fragment Module.const_get (Kernel.const_get)
+

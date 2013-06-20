@@ -1,0 +1,111 @@
+.ft-section
+  .ft-page
+    %h1 Rails: Intro
+
+    %ul
+      %li Cadre de travail de developpement Web
+      %li.ft-fragment
+        ORM tres puissant et tres agreable
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          user.posts.published.order('created_at DESC').limit(15)
+    %ul
+      %li.ft-fragment Preferer les conventions sur la configuration
+      %li.ft-fragment DRY! (Don't Repeat yourself)
+      %li.ft-fragment BEAUCOUP de composants re-utilisables (gems)
+
+  .ft-page
+    %h1 Gems et rails
+
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          $ vagrant ssh
+
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          $ gem install bundle
+          $ gem install rails -v '4.0.0rc2'
+
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          $ cd /vagrant
+          $ rails new gazooyr # C'est ici que la magie demarre
+
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          [ ... ]
+
+    %ul.ft-fragment
+      %li La commande 'rails' cree la structure de l'appli
+      %li Bundler installe les dependances
+
+  .ft-page
+    %h1 Le Gemfile: Au coeur de rails
+
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          source 'https://rubygems.org'
+
+          gem 'rails', '4.0.0.rc2'
+
+          group :development, :test do
+            gem 'rspec-rails'        # Testing framework for rails 3.x and 4.x
+            gem 'faker'              # Some old stuff borrowed from Perl.
+            gem 'factory_girl_rails' # Some tools to generate test data
+            gem 'capybara'           # Use capybara (run acceptance test in a browser)
+            gem 'poltergeist'        # Use phantomjs (acceptance tests are truely headless)
+          end
+
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          gem 'haml-rails'                      # HAML is a better html
+          gem 'bootstrap-sass'                  # No comment
+          gem 'RedCloth', require: 'redcloth'   # Textile parser
+
+  .ft-page
+    %h1 La hierarchie d'une app rails
+
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          $ cd /vagrant/gazooyr
+          $ ls
+          config/    # Main configuration of your app
+          app/       # The code of your app
+          db/        # db configuration, structure and evolution
+          public/    # Static content
+          lib/       # Re-usable content developped for this app
+          log/       # Log of the running app and components
+          bin/       # Almost useless
+          tmp/       # Temporary data (cache, session, etc.)
+          vendor/    # Vendor contents (code and assets)
+          spec/      # Test for this app (rspec)
+          test/      # Test for this app (Unit::Test)
+          Gemfile    # You know that
+
+  .ft-page
+    %h1 Le programme
+
+    %ul
+      %li.ft-fragment Gazooyr, le twitter qu'il est vachement plus mieux
+      %li.ft-fragment
+        Intro
+        %ul
+          %li.ft-fragment Intro
+          %li.ft-fragment Welcome page
+          %li.ft-fragment Controller
+          %li.ft-fragment Routes
+          %li.ft-fragment View
+      %li.ft-fragment
+        Mini CMS
+        %ul
+          %li.ft-fragment Scaffold : C'est quoi ?
+          %li.ft-fragment Scaffold : Description
+

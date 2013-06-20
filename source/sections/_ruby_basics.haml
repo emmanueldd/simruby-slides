@@ -54,3 +54,99 @@
           def method_name(param)
             do_somethig_with_param param
           end
+
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          def method_name(param, another_param = 'default value')
+            do_somethig_with_param param
+            do_somethig_with_param(another_param) # () are 'optional'
+          end
+
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          def example_with_return
+            return true
+          end
+
+          example_with_return and false
+
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          def example_without_return
+            # Same as above, the last computed value is returned
+            true
+          end
+
+  .ft-page
+    %h1 Structure conditionnels
+
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          if something
+            do_1
+          elsif smth_else # <- pay attention
+            do_2
+          else
+            do_3
+          end
+
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          do_1 if something
+
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          do_1 if not something
+          do_1 unless something # Same as above
+
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          variable = true if not variable
+          variable = true unless variable # Same as above
+          variable ||= true               # Still the same
+
+  .ft-page
+    %pre
+      %code.ruby
+        :preserve
+          while something_is_true
+            do_1
+            do_2
+          end
+
+    %h3 Les autres je ne me les rappelle jamais, car elles ne servent a rien grace aux ...
+
+  .ft-page
+    %h1 Blocks et iterateurs
+    %h2 Block = 'genre de' fonction anonyme
+
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          # Exemple
+          array = [1, 2, 3, 'choucroute']
+          array.each do |item|
+            do_smth_cool_with item
+            puts item
+          end
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          # 1
+          # 2
+          # 3
+          # choucroute
+
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          # Version courte
+          array.each { |element| puts element }.reverse
+

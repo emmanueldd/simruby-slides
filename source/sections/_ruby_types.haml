@@ -1,0 +1,104 @@
+.ft-section
+  .ft-page
+    %h1 Types standards
+    %h2 A reasonable part of Ruby's magic
+    %ul
+      %li
+        %a{href: "http://www.ruby-lang.org"} www.ruby-lang.org
+      %li String
+      %li Array
+      %li Hash
+
+    %h3 More than never, Google is your friend. (StackOverflow as well)
+
+  .ft-page
+    %h1 String
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          >> "string".reverse
+          -> "gnirts"
+
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          >> "string"[1,2]
+          -> "tr"
+
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          >> "Hello World" =~ /l{2}/
+          -> true
+          >> "Hello World" =~ /\w \w/
+          -> true
+
+    %h3 Google 'ruby + string'
+
+  .ft-page
+    %h1 Array
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          array = [12, 21, 42, 84]
+          >> array.length
+          -> 4
+          >> array.reverse
+          -> [84, 42, 21, 12]
+          >> array[1, 2]
+          -> [21, 42]
+
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          >> array.map{|x| x * 2 }.join(' -- ')
+          -> "24 -- 42 -- 84 -- 168"
+          >> array.sort_by { |x| x.to_s[1] }
+          -> [21, 12, 42, 84]
+          >> array.keep_if { |x| x%2 == 0 }
+          -> [12, 42, 84]
+
+    %h3.ft-fragment So much array goodness to discover using ...
+    %h3.ft-fragment Google: 'ruby + array'
+
+  .ft-page
+    %h1 Hash
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          hash = { key1: 'value1', test: 3172, '42' => 'THE_ANSWER', key2: 'value2 }
+          >> hash.keys
+          -> [:key1, :test, "42", :key2]
+
+    %pre.ft-fragment
+      %code.ruby
+        :preserve
+          hash.each do |key, value|
+            hash[value] = key
+            puts key
+          end
+
+    %h3.ft-fragment Au hasard: Google: 'ruby + hash'
+
+
+  .ft-page
+    %img{src: 'http://i.qkme.me/3uwzca.jpg'}
+  .ft-page
+    %img{src: 'http://i.qkme.me/3uwza0.jpg'}
+  .ft-page
+    %img{src: 'http://i.qkme.me/3uwz8b.jpg'}
+
+  .ft-page
+    %h1 Bibliotheque standard
+    %h2 Tons of features OOB
+    %ul
+      %li Parcourir des dossiers (Dir)
+      %li Entrees/Sorties fichiers (File | IO)
+      %li Protocoles (HTTP, FTP, ...)
+      %li Formats de fichiers (CSV, JSON, YAML, ...)
+
+  .ft-page
+    %h1 RubyGems
+    %h2 Great features at low price
+
+    %h3 Mais on en reparlera ...
