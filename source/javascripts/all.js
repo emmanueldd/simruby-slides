@@ -1,4 +1,4 @@
-//= require 'jquery'
+//= require 'jquery-1.9.1'
 //= require 'flowtime'
 //= require 'highlight.pack'
 
