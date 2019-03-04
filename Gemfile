@@ -2,6 +2,9 @@
 # the following line to use "https"
 source 'http://rubygems.org'
 
+gem 'haml'
+gem 'sass'
+gem 'coffee-script'
 gem "middleman"
 gem 'compass'
 gem 'flowtime-rails'

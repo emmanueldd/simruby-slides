@@ -106,8 +106,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  coffee-script
   compass
   flowtime-rails
+  haml
   middleman
   puma
   rack
@@ -115,6 +117,7 @@ DEPENDENCIES
   rb-fchange
   rb-fsevent
   rb-inotify
+  sass
 
 BUNDLED WITH
    1.17.3
