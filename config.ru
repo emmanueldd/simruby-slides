@@ -29,7 +29,7 @@ use Rack::TryStatic,
 
 # Run your own Rack app here or use this one to serve 404 messages:
 run lambda { |env|
-  not_found_page = File.expand_path('../build/404/index.html', __FILE__)
-  content = File.exist?(not_found_page) ? File.read(not_found_page) : '404 - page not found'
+  not_found_page = File.expand_path('build/404/index.html', __FILE__)
+  content = File.exist?(not_found_page) ? File.read(not_found_page) : '404 - page notfound'
   return [404, { 'Content-Type'  => 'text/html'}, [content]]
 }
