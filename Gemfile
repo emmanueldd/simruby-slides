@@ -5,6 +5,7 @@ source 'http://rubygems.org'
 gem "middleman"
 gem 'compass'
 gem 'flowtime-rails'
+gem 'rack-contrib'
 
 group :development do
   gem 'rb-inotify', :require => false
