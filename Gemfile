@@ -5,6 +5,8 @@ source 'http://rubygems.org'
 gem "middleman"
 gem 'compass'
 gem 'flowtime-rails'
+gem 'puma'
+gem 'rack'
 gem 'rack-contrib'
 
 group :development do
